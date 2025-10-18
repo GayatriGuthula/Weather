@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>The Random Password is: <span id="show"></span></p>
+    <button onclick="generate()">generate password</button>
+    <script> 
+        let s=document.getElementById("show");
+
+
+        function generate(){
+            var passwordList="abcdefghijklmnopqrstuvwsyzABCDEFGHIZKLMNOPQRSTUVWXYZ1234567890@#$",
+            password=[]
+            for(i=1;i<=6;i++){
+                var randomNumber=Math.floor(Math.random()*passwordList.length)
+                 randomCharacter=passwordList.charAt(randomNumber)
+                 password.push(randomCharacter)
+
+            }
+        password=password.join("")
+        s.textContent=password
+        console.log(s)
+            
+
+        }
+    </script>
+</body>
+</html>
